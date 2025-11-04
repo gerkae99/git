@@ -9,3 +9,5 @@ Der Moderator weiß, hinter welcher Tür das Auto ist. Er macht eine andere als 
 Nun darf Bill noch mal entscheiden, ob er bei der gewählten Tür bleiben will oder noch mal wechseln
 
 Er entscheidet sich und wir kontrollieren den Erfolg.
+
+Es soll geprüft werden, ob ein Wechsel nach Öffnen der ersten Tür sich positiv auf die Gewinnchancen von Bill auswirkt oder ob die Chancen gleich sind.
