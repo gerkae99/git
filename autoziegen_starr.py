@@ -18,14 +18,14 @@ random.seed()
 X = 1
 s_erfolg = 0
 s_bleiben = 0
-swe = 0
-swm = 0
-sbe = 0
-sbm = 0
-bill2 = 0
+swe = 0                                 # Summe der Erfolge, wenn gewchselt wurde
+swm = 0                                 # Summe der Misserfolge, wenn gewechselt wurde
+sbe = 0                                 # Summe der Erfolge, wenn Bill bei seiner ersten Wahl bleibt
+sbm = 0                                 # Summe der Misserfolge, wenn Bill bei seiner Wahl bleibt
+bill2 = 0                               # ist eine Festlegung, ob Bill
 bleiben = 1
 
-for x in range (1, X+1):
+for x in range (1, X+1):                # Wir machen die Berechnung X mal
 
 
     
@@ -34,12 +34,12 @@ for x in range (1, X+1):
     
     auto = random.randint(0,2)
     tore[auto] = 1                       # hinter dieser Tür ist das Auto
-#    print(tore)
+    print("Wo ist was: ",tore)
     
     bill = random.randint(0,2)          # Bill wählt eine Tür
-#    print("Bills erste Wahl = ", bill) 
+    print("Bills erste Wahl (0 bis 2) = ", bill) 
     
-    # Moderator weiss,in welchen Türen Ziegen sind und macht eine solche auf
+    # Moderator weiss, in welchen Türen Ziegen sind und macht eine solche auf
     ziegen = [0,0]
     if (tore[0] == 1 ):                    # Wenn das Auto in der 1. Tür ist
         ziegen[0] = 1                    # dann sind Ziegen in der 2. Tür
@@ -58,19 +58,19 @@ for x in range (1, X+1):
         auto = 2                   
         
     
-#    print("Ziegen = ", ziegen)
-#    print("Auto = ", auto)
+    print("Ziegen = ", ziegen)
+    print("Auto = ", auto)
     #  im Array ziegen sind jetzt die Indices der Ziegen-Türen (minus 1)
     
-    op = random.randint(0,1)         # Welche Tür soll der Moderator nicht öffnen?
+    op = random.randint(0,1)         # Welche Tür soll der Moderator öffnen?
     
-#    print("Nicht öffnen = ", op)     # op bezieht sich auf die Indices des Array ziegen
+    print("Öffnen = ", op)     # op bezieht sich auf die Indices des Array ziegen
     
     # Es sind jetzt noch die Türen Nr. bill und Nr. ziegen[op] geschlossen
     # Diese zwei Indices kommen in die neue Auswahl final = [bill-1, ziegen[op] ]
     
-    final = [bill, ziegen[op] ]
-#    print("Final = ",final)         # Das sind Indices für das Array tore
+    final = [bill-1, ziegen[op] ]
+    print("Final = ",final)         # Das sind Indices für das Array tore
     
     # Aus diesem Sampel kann Bill jetzt noch mal auswählen
     # Wir legen seine Entscheidung aber selber fest
